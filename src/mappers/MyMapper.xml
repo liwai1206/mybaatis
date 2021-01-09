@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="MyMapper">
+  <select id="findAll" resultType="map">
+    select id,name,money from account 
+  </select>
+  
+  <select id="findById" resultType="map" parameterType="int">
+    select id,name,money from account where id = #{accountid}
+  </select>
+  
+  <!-- 参数为实体类 -->
+  <select id="finds" resultType="com.yc.mavenstudy.domain.Account" >
+  	select id , name , money from account 
+  </select>
+  
+  <!-- #{}采用预编译方式； ${}采用字符串拼接的方法 -->
+  <insert id="add" parameterType="com.yc.mavenstudy.domain.Account">
+  	insert into account values( null , #{name} , #{money})
+  </insert>
+  
+  <insert id="add1" parameterType="map">
+  	insert into account values( null , #{name} , #{money})
+  </insert>
+  
+</mapper>
