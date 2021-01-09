@@ -1,2 +1,3 @@
 # mybatis
 Custom mybatis
+在此mybatis框架中，使用了spring中的部分内容，例如JdbcTemplate，除此之外，使用的是阿里巴巴的druid连接池，实现了原始版mybatis的基本功能
